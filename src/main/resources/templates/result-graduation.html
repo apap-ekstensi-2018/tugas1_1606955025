@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Student by NPM</title>
+    </head>
+    <body>
+    	<div th:replace = "fragments/fragment :: header" ></div>
+    	<div class = "container-fluid">
+		<h4>Presentase Kelulusan</h4>
+		</div>
+		<div class = "container-fluid" style="width: 40%; float:left">
+			<div class="row">
+			</div>
+			<div class="row">
+				<div class="col-sm-5">
+					<h6>Tahun</h6>
+				</div>
+				<div class="col-sm-7">
+					<label th:text="${tahun}"></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-5">
+					<h6>Program Studi</h6>
+				</div>
+				<div class="col-sm-7">
+					<label th:text="${programStudi.nama_prodi}"></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-5">
+					<h6>Fakultas</h6>
+				</div>
+				<div class="col-sm-7">
+					<label th:text="${fakultas.nama_fakultas}"></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-5">
+					<h6>Universitas</h6>
+				</div>
+				<div class="col-sm-7">
+					<label th:text="${universitas.nama_univ}"></label>
+				</div>
+			</div>
+		</div>	
+		<div class = "container-fluid" style="width: 60%; float:right">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 th:text="${presentaseKelulusan} + '%'"></h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<label th:text="${graduatedMahasiswa} + ' dari ' + ${allMahasiswa} + ' Mahasiswa Telah Lulus'"></label>
+				</div>
+			</div>
+       </div>
+    </body>
+</html>
+

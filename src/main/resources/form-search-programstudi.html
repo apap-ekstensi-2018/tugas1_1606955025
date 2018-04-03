@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title>Index</title>
+</head>
+<body>
+ <div th:replace="fragments/fragment :: header"></div>
+	 <div>
+	 	<div class = "container-fluid">
+			<h4>Cari Mahasiswa</h4>
+		 </div>
+		 <div class = "container-fluid">
+			 <form action="cari" method="get">
+				 <h6>Universitas</h6>
+				 <select type="text" name="univ" disabled="">
+				 	<option>--Select Universitas--</option>
+				 	<option th:each="universitas : ${universitas}" th:text="${universitas.nama_univ}" th:selected="${universitas.id == selectedUniversitas}"></option>
+				 </select>
+				 <h6>Fakultas</h6>
+				 <select type="text" name="univ">
+				 	<option>--Select Fakultas--</option>
+				 	<option th:each="fakultas : ${fakultas}" th:text="${fakultas.nama_fakultas}"  th:selected="${universitas.id == univers}"></option>
+				 </select>
+				 <div>
+					<button type="submit">Lihat</button>
+				</div>
+			</form>
+		</div>
+	 </div>
+</body>
+</html>

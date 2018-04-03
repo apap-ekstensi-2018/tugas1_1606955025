@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<title>Add</title>
+	</head>
+	<body>
+		<div th:replace = "fragments/fragment :: header" ></div>
+		<div class = "container-fluid">
+		<h3>Sukses</h3>
+		<h6 th:text="'Mahasiswa dengan NPM ' + ${npm} + ' berhasil ditambahkan'">Student NPM</h6>
+		</div>
+	</body>
+</html>

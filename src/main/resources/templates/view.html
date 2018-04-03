@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Student by NPM</title>
+    </head>
+    <body>
+    	<div th:replace = "fragments/fragment :: header" ></div>
+    	<div class = "container-fluid">
+		<h4 th:text="'Lihat Data Mahasiswa -  ' + ${student.npm}"></h4>
+		</div>
+		<div class = "container-fluid">
+			<div class="row">
+				<div class="col-sm-4">
+					<h6>NPM</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${student.npm}"></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<h6>Nama</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${student.nama}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Tempat/Tanggal Lahir</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${student.tempat_lahir} + ' ' + ${#dates.format(student.tanggal_lahir, 'dd-MM-yyyy')}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Program Studi</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${program_studi.nama_prodi}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Fakultas</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${fakultas.nama_fakultas}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Universitas</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${universitas.nama_univ}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Jenis Kelamin</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${student.jenis_kelamin==1} ? 'Perempuan' : 'Laki-laki'"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Agama</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${student.agama}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Golongan Darah</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${student.golongan_darah}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Tahun Masuk</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${student.tahun_masuk}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Jalur Masuk</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${student.jalur_masuk}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+				<div class="col-sm-4">
+					<h6>Status</h6>
+				</div>
+				<div class="col-sm-8">
+					<label th:text="${student.status}"></label>
+				</div>
+	       </div>
+	       <div class="row">
+	       		<div class="col-sm-4">
+	       		<a th:href="'/mahasiswa/ubah/' + ${student.npm}">
+					<button>Ubah</button>
+				</a>
+				</div>
+	       </div>
+       </div>
+    </body>
+</html>
+
